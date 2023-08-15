@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.115.4">
+    <title>Авторизация на bootstrap CSS</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="auth.css" rel="stylesheet">
+  </head>
+  <body class="bg-body-tertiary">
+    
+<div class="container-fluid">
+  <div class="row">
+    <!-- left side -->
+    <div class="col bg-light vh-100 py-4 text-left">
+      <h1 class="display-6 px-4">Сервис для дизайнеров и работодателей</h1>
+      <!-- <h5>Лучший сервис по подбору дизайнеров и работы</h5> -->
+    </div>
+    <!-- right side -->
+    <div class="col bg-white vh-100">
+      <main>
+        <div class="py-5 text-center">
+          <!-- svg логотип в виде кода -->
+          <svg class="mb-4" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M73.6 40C73.6 58.5568 58.5568 73.6 40 73.6C21.4432 73.6 6.4 58.5568 6.4 40C6.4 21.4432 21.4432 6.4 40 6.4C41.908 6.4 43.7788 6.55903 45.6 6.86457V20.4455L19.0904 37.1992V42.6094L47.0904 60.3051L52 57.6V8.60622C64.6306 13.437 73.6 25.6711 73.6 40ZM80 40C80 62.0914 62.0914 80 40 80C17.9086 80 0 62.0914 0 40C0 17.9086 17.9086 0 40 0C62.0914 0 80 17.9086 80 40ZM45.6 51.7921V28.0165L26.7898 39.9043L45.6 51.7921Z" fill="#202020"/>
+          </svg>
+          <!-- <img class="mb-4" id="logo" src="../designer-logo.svg" alt="" width="100" height="100"> -->
+          <!-- <h3>Designer.ru</h3> -->
+          <!-- <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p> -->
+        </div>
+          
+          <div class="col-md-3 col-lg-8 mx-auto">
+
+            <!-- табы -->
+            <ul class="nav nav-tabs mb-5 d-flex justify-content-center" id="userType" role="tablist">
+              <li class="nav-item" role="userType">
+                <button class="nav-link active" id="designer-tab" data-bs-toggle="tab" data-bs-target="#designer" type="button" role="tab" aria-controls="designer" aria-selected="true">Дизайнер</button>
+              </li>
+              <li class="nav-item" role="userType">
+                <button class="nav-link" id="customer-tab" data-bs-toggle="tab" data-bs-target="#customer" type="button" role="tab" aria-controls="customer" aria-selected="false">Работодатель</button>
+              </li>
+            </ul>
+            <!-- табы конец -->
+          
+            <form class="needs-validation" novalidate>
+              
+                <!-- <ul class="nav justify-content-center my-5">
+                <div class="form-check form-check-inline">
+                  <input id="designer" name="userType" type="radio" class="form-check-input" checked required>
+                  <label class="form-check-label" for="credit">Дизайнер</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input id="customer" name="userType" type="radio" class="form-check-input" required>
+                  <label class="form-check-label" for="debit">Работодатель</label>
+                </div>
+              </ul> -->
+
+              
+              
+    
+              <div class="py-6"></div>
+    
+              
+                
+                  <div class="input-group has-validation">
+                    <!-- <span class="input-group-text">@</span> -->
+                    <span class="input-group-text">
+                      <!-- <img src="../behance-1.svg" width="24"> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/></svg>
+                    </span>
+                    <input type="text" class="form-control form-control-lg text-black-50 bg-white" id="username" placeholder="Портфолио" required>
+                  <div class="invalid-feedback">
+                      Ссылка на портфолио обязательна.
+                    </div>
+                  </div>
+                
+                <div class="d-flex justify-content-start">
+                  <!-- link with icon, без icon подчеркивание перечркивает текст ссылки -->
+                  <a class="icon-link py-2" href="#">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                      <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg> -->добавить
+                  </a>
+                </div>
+                
+                
+                <div class="py-2"></div>
+    
+                
+                  <input type="email" class="form-control form-control-lg" id="email" placeholder="Эл. почта">
+                  <div class="invalid-feedback">
+                    Нажмите ссылку в письме для подтверждения, что почта ваша.
+                  </div>
+
+                  
+                
+    
+    
+                
+    
+              <div class="form-check pt-4">
+                <input type="checkbox" class="form-check-input" id="same-address">
+                <label class="form-check-label" for="same-address">Запомнить меня</label>
+              </div>
+              <!-- <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Запомнить</label>
+              </div> -->
+              <!-- кнопка вид 2 -->
+              <p class="mt-5 mb-3 text-body-secondary"></p>
+              <button class="btn btn-primary w-100 py-2" type="submit">Создать акаунт</button>
+            </form>
+            <div class="py-5 text-center">
+            <div class="d-inline">Уже есть профиль?</div>
+            <a class="link d-inline" href="#">Войти</a>
+            
+            </div>
+
+          </div>
+        </div>
+      </main>
+    </div>
+    </div>
+    
+  
+
+  <!-- <footer class="my-5 pt-5 text-body-secondary text-center text-small">
+    <p class="mb-1">&copy; 2017–2023 Designer.ru</p>
+  </footer> -->
+</div>
+<script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="auth.js"></script></body>
+</html>
